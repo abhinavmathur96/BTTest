@@ -1,40 +1,76 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.majorproject.bttest.MainActivity">
 
-    <TextView
-        android:id="@+id/textview_title"
-        android:text="@string/app_name"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button_enableBT"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="ENABLE BT"
-        android:layout_below="@id/textview_title"
-        />
+        <LinearLayout
+            android:id="@+id/led"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top|center"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button_alreadyPairedBT"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="SHOW ALREADY PAIRED BT DEVICES"
-        android:layout_below="@id/button_enableBT"
-        />
+            <Switch
+                android:id="@+id/toggle"
+                android:layout_width="161dp"
+                android:layout_height="79dp"
+                android:layout_gravity="left"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:textColorLink="@android:color/holo_red_dark" />
 
-    <Button
-        android:id="@+id/button_scanBT"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="SCAN FOR BT DEVICES"
-        android:layout_below="@id/button_alreadyPairedBT"
-        />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-</RelativeLayout>
+                <TextView
+                    android:id="@+id/bluetoothLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text="BT Status" />
+
+                <TextView
+                    android:id="@+id/bluetoothStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:text="status" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/off"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bluetooth" />
+
+            <Button
+                android:id="@+id/pairedBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Show Paired" />
+
+            <Button
+                android:id="@+id/scan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Scan" />
+
+            <ListView
+                android:id="@+id/devicesListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

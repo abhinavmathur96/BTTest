@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 public class FoundBTDevices extends ListActivity
@@ -31,6 +33,7 @@ public class FoundBTDevices extends ListActivity
 
         // start looking for bluetooth devices
         mBluetoothAdapter.startDiscovery();
+        Toast.makeText(getBaseContext(), "Starting discovery", Toast.LENGTH_SHORT).show();
 
         // Discover new devices
         // Create a BroadcastReceiver for ACTION_FOUND
@@ -60,6 +63,7 @@ public class FoundBTDevices extends ListActivity
                     bluetoothObject.setBluetooth_rssi(rssi);
 
                     arrayOfFoundBTDevices.add(bluetoothObject);
+                    Toast.makeText(getBaseContext(), "Found something", Toast.LENGTH_SHORT).show();
 
                     // 1. Pass context and data to the custom adapter
                     FoundBTDevicesAdapter adapter = new FoundBTDevicesAdapter(getApplicationContext(), arrayOfFoundBTDevices);

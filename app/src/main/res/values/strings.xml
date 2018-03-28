@@ -1,6 +1,12 @@
 <resources>
-    <string name="app_name">async_band</string>
-    <string name="title_activity_fake">FakeActivity</string>
-    <string name="title_row_bt_already_paired">Already Paired Devices</string>
-    <string name="title_row_bt_scan_new_devices">Scan New Devices</string>
+    <string name="app_name">BTTest</string>
+    <string name="BTNotFound">Status: Bluetooth not found</string>
+    <string name="BTEnabled">Bluetooth enabled</string>
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
+    <string name="BTDisabled">Bluetooth disabled</string>
+    <string name="connecting">Connecting...</string>
+    <string name="send">Send</string>
+    <string name="a">a</string>
+    <string name="send_to_wearable">Send to Wearable</string>
 </resources>
